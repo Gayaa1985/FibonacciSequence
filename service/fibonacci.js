@@ -1,11 +1,17 @@
 'use strict';
 
 exports.fibonacciSeries = async ctx => {
-    const number = ctx.params.number;
     try {
+        const number = parseInt(ctx.params.number, 10);
+
+        if (isNaN(number)) {
+          ctx.status = 400; // Bad Request
+          ctx.body = 'Not a number';
+          return;
+        }
         let n1 = 0, n2 = 1, nextTerm;
         let series = [];
-        for (let i = 1; i <= number; i++) {
+        for (let i = 1; i < number; i++) {
             series.push(n1);
             nextTerm = n1 + n2;
             n1 = n2;

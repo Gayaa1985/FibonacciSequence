@@ -24,7 +24,6 @@ To get the fibonacci series using the GET method from postman following steps ar
 
 To run the unit test we are using mocha and chai package. Perform the below steps.
 
-1. Naviage to the tests folder.
-2. Run the below command to initiate the test.
-    npx mocha fibonacciSeriestest.js
-3. This will run the tests in the file.
+1. From the root folder execute the below command to run the tests.
+    npm test
+2. This will run all the tests specified under tests folder.
